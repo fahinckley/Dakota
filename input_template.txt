@@ -1,4 +1,2 @@
-# parameters template file for Cape Thompson evaluation
-
 {dt}
 

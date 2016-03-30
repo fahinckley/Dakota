@@ -1,0 +1,1576 @@
+Dakota version 6.3 released November 15 2015.
+Subversion revision 3842 built Nov  6 2015 21:42:16.
+Running MPI Dakota executable in serial mode.
+Start time: Tue Mar 29 21:24:28 2016
+
+-----------------------
+Begin DAKOTA input file
+dakota_analysis.in
+-----------------------
+# A Dakota parameter study 
+# Fit to Cape Thompson borehole data
+#
+# Call with:
+#   $ dakota -i dakota_analysis.in -o dakota_analysis.out &> analysis.log
+
+# There are num_steps + 1 = 7 evaluations.
+method
+  vector_parameter_study
+    final_point = 100.0 
+    num_steps = 100
+
+variables
+  continuous_design = 1
+    descriptors   'dt' 
+    initial_point  1.0 
+
+interface
+  fork
+    analysis_driver = 'python ./capeThomp.py' # must be executable
+    parameters_file = 'params.in'
+    results_file = 'results.out'
+
+responses
+  response_functions = 1
+  response_descriptors = 'rms-error'
+  no_gradients
+  no_hessians
+---------------------
+End DAKOTA input file
+---------------------
+
+Using Dakota input file 'dakota_analysis.in'
+Writing new restart file dakota.rst
+
+>>>>> Executing environment.
+
+>>>>> Running vector_parameter_study iterator.
+
+Vector parameter study from
+                      1.0000000000e+00
+to
+                      1.0000000000e+02
+using 100 steps
+
+>>>>> Vector parameter study evaluation for 0% along vector
+
+---------------------
+Begin Evaluation    1
+---------------------
+Parameters for evaluation 1:
+                      1.0000000000e+00 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 1:
+Active set vector = { 1 }
+                      7.1393597554e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 1% along vector
+
+---------------------
+Begin Evaluation    2
+---------------------
+Parameters for evaluation 2:
+                      1.9900000000e+00 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 2:
+Active set vector = { 1 }
+                      7.1343486029e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 2% along vector
+
+---------------------
+Begin Evaluation    3
+---------------------
+Parameters for evaluation 3:
+                      2.9800000000e+00 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 3:
+Active set vector = { 1 }
+                      7.2046687830e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 3% along vector
+
+---------------------
+Begin Evaluation    4
+---------------------
+Parameters for evaluation 4:
+                      3.9700000000e+00 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 4:
+Active set vector = { 1 }
+                      7.2704398498e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 4% along vector
+
+---------------------
+Begin Evaluation    5
+---------------------
+Parameters for evaluation 5:
+                      4.9600000000e+00 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 5:
+Active set vector = { 1 }
+                      7.3813792533e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 5% along vector
+
+---------------------
+Begin Evaluation    6
+---------------------
+Parameters for evaluation 6:
+                      5.9500000000e+00 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 6:
+Active set vector = { 1 }
+                      7.4978674460e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 6% along vector
+
+---------------------
+Begin Evaluation    7
+---------------------
+Parameters for evaluation 7:
+                      6.9400000000e+00 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 7:
+Active set vector = { 1 }
+                      7.5759816122e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 7% along vector
+
+---------------------
+Begin Evaluation    8
+---------------------
+Parameters for evaluation 8:
+                      7.9300000000e+00 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 8:
+Active set vector = { 1 }
+                      7.6919550168e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 8% along vector
+
+---------------------
+Begin Evaluation    9
+---------------------
+Parameters for evaluation 9:
+                      8.9200000000e+00 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 9:
+Active set vector = { 1 }
+                      7.8054315873e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 9% along vector
+
+---------------------
+Begin Evaluation   10
+---------------------
+Parameters for evaluation 10:
+                      9.9100000000e+00 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 10:
+Active set vector = { 1 }
+                      7.8794201157e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 10% along vector
+
+---------------------
+Begin Evaluation   11
+---------------------
+Parameters for evaluation 11:
+                      1.0900000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 11:
+Active set vector = { 1 }
+                      7.9877697444e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 11% along vector
+
+---------------------
+Begin Evaluation   12
+---------------------
+Parameters for evaluation 12:
+                      1.1890000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 12:
+Active set vector = { 1 }
+                      8.0929569717e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 12% along vector
+
+---------------------
+Begin Evaluation   13
+---------------------
+Parameters for evaluation 13:
+                      1.2880000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 13:
+Active set vector = { 1 }
+                      8.1950705810e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 13% along vector
+
+---------------------
+Begin Evaluation   14
+---------------------
+Parameters for evaluation 14:
+                      1.3870000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 14:
+Active set vector = { 1 }
+                      8.2615049543e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 14% along vector
+
+---------------------
+Begin Evaluation   15
+---------------------
+Parameters for evaluation 15:
+                      1.4860000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 15:
+Active set vector = { 1 }
+                      8.3588071596e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 15% along vector
+
+---------------------
+Begin Evaluation   16
+---------------------
+Parameters for evaluation 16:
+                      1.5850000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 16:
+Active set vector = { 1 }
+                      8.4534288950e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 16% along vector
+
+---------------------
+Begin Evaluation   17
+---------------------
+Parameters for evaluation 17:
+                      1.6840000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 17:
+Active set vector = { 1 }
+                      8.5150966492e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 17% along vector
+
+---------------------
+Begin Evaluation   18
+---------------------
+Parameters for evaluation 18:
+                      1.7830000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 18:
+Active set vector = { 1 }
+                      8.6055869555e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 18% along vector
+
+---------------------
+Begin Evaluation   19
+---------------------
+Parameters for evaluation 19:
+                      1.8820000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 19:
+Active set vector = { 1 }
+                      8.6937868002e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 19% along vector
+
+---------------------
+Begin Evaluation   20
+---------------------
+Parameters for evaluation 20:
+                      1.9810000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 20:
+Active set vector = { 1 }
+                      8.7513786174e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 20% along vector
+
+---------------------
+Begin Evaluation   21
+---------------------
+Parameters for evaluation 21:
+                      2.0800000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 21:
+Active set vector = { 1 }
+                      8.8360442147e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 21% along vector
+
+---------------------
+Begin Evaluation   22
+---------------------
+Parameters for evaluation 22:
+                      2.1790000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 22:
+Active set vector = { 1 }
+                      8.9187436139e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 22% along vector
+
+---------------------
+Begin Evaluation   23
+---------------------
+Parameters for evaluation 23:
+                      2.2780000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 23:
+Active set vector = { 1 }
+                      8.9728363253e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 23% along vector
+
+---------------------
+Begin Evaluation   24
+---------------------
+Parameters for evaluation 24:
+                      2.3770000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 24:
+Active set vector = { 1 }
+                      9.0524876168e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 24% along vector
+
+---------------------
+Begin Evaluation   25
+---------------------
+Parameters for evaluation 25:
+                      2.4760000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 25:
+Active set vector = { 1 }
+                      9.1304344439e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 25% along vector
+
+---------------------
+Begin Evaluation   26
+---------------------
+Parameters for evaluation 26:
+                      2.5750000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 26:
+Active set vector = { 1 }
+                      9.1814941078e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 26% along vector
+
+---------------------
+Begin Evaluation   27
+---------------------
+Parameters for evaluation 27:
+                      2.6740000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 27:
+Active set vector = { 1 }
+                      9.2567849427e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 27% along vector
+
+---------------------
+Begin Evaluation   28
+---------------------
+Parameters for evaluation 28:
+                      2.7730000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 28:
+Active set vector = { 1 }
+                      9.3305829834e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 28% along vector
+
+---------------------
+Begin Evaluation   29
+---------------------
+Parameters for evaluation 29:
+                      2.8720000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 29:
+Active set vector = { 1 }
+                      9.4029570948e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 29% along vector
+
+---------------------
+Begin Evaluation   30
+---------------------
+Parameters for evaluation 30:
+                      2.9710000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 30:
+Active set vector = { 1 }
+                      9.4504471990e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 30% along vector
+
+---------------------
+Begin Evaluation   31
+---------------------
+Parameters for evaluation 31:
+                      3.0700000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 31:
+Active set vector = { 1 }
+                      9.5205879844e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 31% along vector
+
+---------------------
+Begin Evaluation   32
+---------------------
+Parameters for evaluation 32:
+                      3.1690000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 32:
+Active set vector = { 1 }
+                      9.5894656588e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 32% along vector
+
+---------------------
+Begin Evaluation   33
+---------------------
+Parameters for evaluation 33:
+                      3.2680000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 33:
+Active set vector = { 1 }
+                      9.6347086654e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 33% along vector
+
+---------------------
+Begin Evaluation   34
+---------------------
+Parameters for evaluation 34:
+                      3.3670000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 34:
+Active set vector = { 1 }
+                      9.7015970532e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 34% along vector
+
+---------------------
+Begin Evaluation   35
+---------------------
+Parameters for evaluation 35:
+                      3.4660000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 35:
+Active set vector = { 1 }
+                      9.7673559166e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 35% along vector
+
+---------------------
+Begin Evaluation   36
+---------------------
+Parameters for evaluation 36:
+                      3.5650000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 36:
+Active set vector = { 1 }
+                      9.8105896519e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 36% along vector
+
+---------------------
+Begin Evaluation   37
+---------------------
+Parameters for evaluation 37:
+                      3.6640000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 37:
+Active set vector = { 1 }
+                      9.8745631268e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 37% along vector
+
+---------------------
+Begin Evaluation   38
+---------------------
+Parameters for evaluation 38:
+                      3.7630000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 38:
+Active set vector = { 1 }
+                      9.9375193293e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 38% along vector
+
+---------------------
+Begin Evaluation   39
+---------------------
+Parameters for evaluation 39:
+                      3.8620000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 39:
+Active set vector = { 1 }
+                      9.9789436055e+00 rms-error
+
+
+>>>>> Vector parameter study evaluation for 39% along vector
+
+---------------------
+Begin Evaluation   40
+---------------------
+Parameters for evaluation 40:
+                      3.9610000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 40:
+Active set vector = { 1 }
+                      1.0040286675e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 40% along vector
+
+---------------------
+Begin Evaluation   41
+---------------------
+Parameters for evaluation 41:
+                      4.0600000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 41:
+Active set vector = { 1 }
+                      1.0100707797e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 41% along vector
+
+---------------------
+Begin Evaluation   42
+---------------------
+Parameters for evaluation 42:
+                      4.1590000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 42:
+Active set vector = { 1 }
+                      1.0160239063e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 42% along vector
+
+---------------------
+Begin Evaluation   43
+---------------------
+Parameters for evaluation 43:
+                      4.2580000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 43:
+Active set vector = { 1 }
+                      1.0199447256e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 43% along vector
+
+---------------------
+Begin Evaluation   44
+---------------------
+Parameters for evaluation 44:
+                      4.3570000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 44:
+Active set vector = { 1 }
+                      1.0257562020e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 44% along vector
+
+---------------------
+Begin Evaluation   45
+---------------------
+Parameters for evaluation 45:
+                      4.4560000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 45:
+Active set vector = { 1 }
+                      1.0314864247e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 45% along vector
+
+---------------------
+Begin Evaluation   46
+---------------------
+Parameters for evaluation 46:
+                      4.5550000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 46:
+Active set vector = { 1 }
+                      1.0352627339e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 46% along vector
+
+---------------------
+Begin Evaluation   47
+---------------------
+Parameters for evaluation 47:
+                      4.6540000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 47:
+Active set vector = { 1 }
+                      1.0408632996e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 47% along vector
+
+---------------------
+Begin Evaluation   48
+---------------------
+Parameters for evaluation 48:
+                      4.7530000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 48:
+Active set vector = { 1 }
+                      1.0463893178e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 48% along vector
+
+---------------------
+Begin Evaluation   49
+---------------------
+Parameters for evaluation 49:
+                      4.8520000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 49:
+Active set vector = { 1 }
+                      1.0500330494e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 49% along vector
+
+---------------------
+Begin Evaluation   50
+---------------------
+Parameters for evaluation 50:
+                      4.9510000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 50:
+Active set vector = { 1 }
+                      1.0554398520e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 50% along vector
+
+---------------------
+Begin Evaluation   51
+---------------------
+Parameters for evaluation 51:
+                      5.0500000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 51:
+Active set vector = { 1 }
+                      1.0607779669e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 51% along vector
+
+---------------------
+Begin Evaluation   52
+---------------------
+Parameters for evaluation 52:
+                      5.1490000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 52:
+Active set vector = { 1 }
+                      1.0642995464e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 52% along vector
+
+---------------------
+Begin Evaluation   53
+---------------------
+Parameters for evaluation 53:
+                      5.2480000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 53:
+Active set vector = { 1 }
+                      1.0695276006e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 53% along vector
+
+---------------------
+Begin Evaluation   54
+---------------------
+Parameters for evaluation 54:
+                      5.3470000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 54:
+Active set vector = { 1 }
+                      1.0746921217e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 54% along vector
+
+---------------------
+Begin Evaluation   55
+---------------------
+Parameters for evaluation 55:
+                      5.4460000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 55:
+Active set vector = { 1 }
+                      1.0781007194e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 55% along vector
+
+---------------------
+Begin Evaluation   56
+---------------------
+Parameters for evaluation 56:
+                      5.5450000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 56:
+Active set vector = { 1 }
+                      1.0831632575e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 56% along vector
+
+---------------------
+Begin Evaluation   57
+---------------------
+Parameters for evaluation 57:
+                      5.6440000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 57:
+Active set vector = { 1 }
+                      1.0881668245e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 57% along vector
+
+---------------------
+Begin Evaluation   58
+---------------------
+Parameters for evaluation 58:
+                      5.7430000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 58:
+Active set vector = { 1 }
+                      1.0931129972e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 58% along vector
+
+---------------------
+Begin Evaluation   59
+---------------------
+Parameters for evaluation 59:
+                      5.8420000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 59:
+Active set vector = { 1 }
+                      1.0963793085e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 59% along vector
+
+---------------------
+Begin Evaluation   60
+---------------------
+Parameters for evaluation 60:
+                      5.9410000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 60:
+Active set vector = { 1 }
+                      1.1012331497e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 60% along vector
+
+---------------------
+Begin Evaluation   61
+---------------------
+Parameters for evaluation 61:
+                      6.0400000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 61:
+Active set vector = { 1 }
+                      1.1060334874e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 61% along vector
+
+---------------------
+Begin Evaluation   62
+---------------------
+Parameters for evaluation 62:
+                      6.1390000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 62:
+Active set vector = { 1 }
+                      1.1092046579e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 62% along vector
+
+---------------------
+Begin Evaluation   63
+---------------------
+Parameters for evaluation 63:
+                      6.2380000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 63:
+Active set vector = { 1 }
+                      1.1139187996e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 63% along vector
+
+---------------------
+Begin Evaluation   64
+---------------------
+Parameters for evaluation 64:
+                      6.3370000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 64:
+Active set vector = { 1 }
+                      1.1185829235e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 64% along vector
+
+---------------------
+Begin Evaluation   65
+---------------------
+Parameters for evaluation 65:
+                      6.4360000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 65:
+Active set vector = { 1 }
+                      1.1216651536e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 65% along vector
+
+---------------------
+Begin Evaluation   66
+---------------------
+Parameters for evaluation 66:
+                      6.5350000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 66:
+Active set vector = { 1 }
+                      1.1262485908e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 66% along vector
+
+---------------------
+Begin Evaluation   67
+---------------------
+Parameters for evaluation 67:
+                      6.6340000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 67:
+Active set vector = { 1 }
+                      1.1307851471e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 67% along vector
+
+---------------------
+Begin Evaluation   68
+---------------------
+Parameters for evaluation 68:
+                      6.7330000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 68:
+Active set vector = { 1 }
+                      1.1337840162e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 68% along vector
+
+---------------------
+Begin Evaluation   69
+---------------------
+Parameters for evaluation 69:
+                      6.8320000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 69:
+Active set vector = { 1 }
+                      1.1382448537e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 69% along vector
+
+---------------------
+Begin Evaluation   70
+---------------------
+Parameters for evaluation 70:
+                      6.9310000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 70:
+Active set vector = { 1 }
+                      1.1426616449e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 70% along vector
+
+---------------------
+Begin Evaluation   71
+---------------------
+Parameters for evaluation 71:
+                      7.0300000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 71:
+Active set vector = { 1 }
+                      1.1470353827e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 71% along vector
+
+---------------------
+Begin Evaluation   72
+---------------------
+Parameters for evaluation 72:
+                      7.1290000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 72:
+Active set vector = { 1 }
+                      1.1499277638e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 72% along vector
+
+---------------------
+Begin Evaluation   73
+---------------------
+Parameters for evaluation 73:
+                      7.2280000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 73:
+Active set vector = { 1 }
+                      1.1542318580e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 73% along vector
+
+---------------------
+Begin Evaluation   74
+---------------------
+Parameters for evaluation 74:
+                      7.3270000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 74:
+Active set vector = { 1 }
+                      1.1584953793e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 74% along vector
+
+---------------------
+Begin Evaluation   75
+---------------------
+Parameters for evaluation 75:
+                      7.4260000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 75:
+Active set vector = { 1 }
+                      1.1613156182e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 75% along vector
+
+---------------------
+Begin Evaluation   76
+---------------------
+Parameters for evaluation 76:
+                      7.5250000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 76:
+Active set vector = { 1 }
+                      1.1655134413e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 76% along vector
+
+---------------------
+Begin Evaluation   77
+---------------------
+Parameters for evaluation 77:
+                      7.6240000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 77:
+Active set vector = { 1 }
+                      1.1696729518e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 77% along vector
+
+---------------------
+Begin Evaluation   78
+---------------------
+Parameters for evaluation 78:
+                      7.7230000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 78:
+Active set vector = { 1 }
+                      1.1724250685e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 78% along vector
+
+---------------------
+Begin Evaluation   79
+---------------------
+Parameters for evaluation 79:
+                      7.8220000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 79:
+Active set vector = { 1 }
+                      1.1765224816e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 79% along vector
+
+---------------------
+Begin Evaluation   80
+---------------------
+Parameters for evaluation 80:
+                      7.9210000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 80:
+Active set vector = { 1 }
+                      1.1805836485e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 80% along vector
+
+---------------------
+Begin Evaluation   81
+---------------------
+Parameters for evaluation 81:
+                      8.0200000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 81:
+Active set vector = { 1 }
+                      1.1832713175e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 81% along vector
+
+---------------------
+Begin Evaluation   82
+---------------------
+Parameters for evaluation 82:
+                      8.1190000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 82:
+Active set vector = { 1 }
+                      1.1872736834e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 82% along vector
+
+---------------------
+Begin Evaluation   83
+---------------------
+Parameters for evaluation 83:
+                      8.2180000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 83:
+Active set vector = { 1 }
+                      1.1912416972e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 83% along vector
+
+---------------------
+Begin Evaluation   84
+---------------------
+Parameters for evaluation 84:
+                      8.3170000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 84:
+Active set vector = { 1 }
+                      1.1951760290e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 84% along vector
+
+---------------------
+Begin Evaluation   85
+---------------------
+Parameters for evaluation 85:
+                      8.4160000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 85:
+Active set vector = { 1 }
+                      1.1977805262e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 85% along vector
+
+---------------------
+Begin Evaluation   86
+---------------------
+Parameters for evaluation 86:
+                      8.5150000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 86:
+Active set vector = { 1 }
+                      1.2016601546e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 86% along vector
+
+---------------------
+Begin Evaluation   87
+---------------------
+Parameters for evaluation 87:
+                      8.6140000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 87:
+Active set vector = { 1 }
+                      1.2055077892e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 87% along vector
+
+---------------------
+Begin Evaluation   88
+---------------------
+Parameters for evaluation 88:
+                      8.7130000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 88:
+Active set vector = { 1 }
+                      1.2080554011e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 88% along vector
+
+---------------------
+Begin Evaluation   89
+---------------------
+Parameters for evaluation 89:
+                      8.8120000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 89:
+Active set vector = { 1 }
+                      1.2118510344e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 89% along vector
+
+---------------------
+Begin Evaluation   90
+---------------------
+Parameters for evaluation 90:
+                      8.9110000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 90:
+Active set vector = { 1 }
+                      1.2156162313e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 90% along vector
+
+---------------------
+Begin Evaluation   91
+---------------------
+Parameters for evaluation 91:
+                      9.0100000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 91:
+Active set vector = { 1 }
+                      1.2181097273e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 91% along vector
+
+---------------------
+Begin Evaluation   92
+---------------------
+Parameters for evaluation 92:
+                      9.1090000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 92:
+Active set vector = { 1 }
+                      1.2218254184e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 92% along vector
+
+---------------------
+Begin Evaluation   93
+---------------------
+Parameters for evaluation 93:
+                      9.2080000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 93:
+Active set vector = { 1 }
+                      1.2255121131e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 93% along vector
+
+---------------------
+Begin Evaluation   94
+---------------------
+Parameters for evaluation 94:
+                      9.3070000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 94:
+Active set vector = { 1 }
+                      1.2279540540e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 94% along vector
+
+---------------------
+Begin Evaluation   95
+---------------------
+Parameters for evaluation 95:
+                      9.4060000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 95:
+Active set vector = { 1 }
+                      1.2315935528e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 95% along vector
+
+---------------------
+Begin Evaluation   96
+---------------------
+Parameters for evaluation 96:
+                      9.5050000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 96:
+Active set vector = { 1 }
+                      1.2352053896e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 96% along vector
+
+---------------------
+Begin Evaluation   97
+---------------------
+Parameters for evaluation 97:
+                      9.6040000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 97:
+Active set vector = { 1 }
+                      1.2375981484e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 97% along vector
+
+---------------------
+Begin Evaluation   98
+---------------------
+Parameters for evaluation 98:
+                      9.7030000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 98:
+Active set vector = { 1 }
+                      1.2411649319e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 98% along vector
+
+---------------------
+Begin Evaluation   99
+---------------------
+Parameters for evaluation 99:
+                      9.8020000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 99:
+Active set vector = { 1 }
+                      1.2447052927e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 99% along vector
+
+---------------------
+Begin Evaluation  100
+---------------------
+Parameters for evaluation 100:
+                      9.9010000000e+01 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 100:
+Active set vector = { 1 }
+                      1.2482196728e+01 rms-error
+
+
+>>>>> Vector parameter study evaluation for 100% along vector
+
+---------------------
+Begin Evaluation  101
+---------------------
+Parameters for evaluation 101:
+                      1.0000000000e+02 dt
+
+blocking fork: python ./capeThomp.py params.in results.out
+
+Active response data for evaluation 101:
+Active set vector = { 1 }
+                      1.2505483720e+01 rms-error
+
+
+<<<<< Function evaluation summary: 101 total (101 new, 0 duplicate)
+
+<<<<< Iterator vector_parameter_study completed.
+<<<<< Environment execution completed.
+DAKOTA execution time in seconds:
+  Total CPU        =   0.038298 [parent =      0.036, child =   0.002298]
+  Total wall clock =    11.0702

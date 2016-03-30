@@ -23,6 +23,6 @@ interface
 
 responses
   response_functions = 1
-  response_descriptors = 'chi-sq'
+  response_descriptors = 'rms-error'
   no_gradients
   no_hessians
