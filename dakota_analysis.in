@@ -1,0 +1,28 @@
+# A Dakota parameter study 
+# Fit to Cape Thompson borehole data
+#
+# Call with:
+#   $ dakota -i dakota_analysis.in -o dakota_analysis.out &> analysis.log
+
+# There are num_steps + 1 = 7 evaluations.
+method
+  vector_parameter_study
+    final_point = 100.0 
+    num_steps = 100
+
+variables
+  continuous_design = 1
+    descriptors   'dt' 
+    initial_point  1.0 
+
+interface
+  fork
+    analysis_driver = 'python ./capeThomp.py' # must be executable
+    parameters_file = 'params.in'
+    results_file = 'results.out'
+
+responses
+  response_functions = 1
+  response_descriptors = 'chi-sq'
+  no_gradients
+  no_hessians
